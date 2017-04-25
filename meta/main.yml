@@ -1,6 +1,6 @@
 galaxy_info:
   author: fabiohbarbosa
-  description: Install the latest shutter Screenshot tool in Ubuntu
+  description: Install the latest shutter screenshot tool in Ubuntu
   
   license: MIT
   
@@ -9,4 +9,21 @@ galaxy_info:
   platforms:
   - name: Ubuntu
     versions:
-    - all
+      - gutsy
+      - hardy
+      - intrepid
+      - jaunty
+      - karmic
+      - lucid
+      - maverick
+      - natty
+      - oneiric
+      - precise
+      - quantal
+      - raring
+      - saucy
+      - trusty
+      - utopic
+      - vivid
+      - wily
+      - xenial

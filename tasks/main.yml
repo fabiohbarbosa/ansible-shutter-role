@@ -1,16 +1,20 @@
 ---
 - name: Add shutter PPA repository
+  become: yes
   apt_repository:
     repo: ppa:shutter/ppa
-  become: yes
+  when: ansible_distribution_release != '{{item}}'
+  with_items:
+    - 'zesty'
+    - 'yakkety'
 
 - name: Update apt packages
+  become: yes
   apt:
     update_cache: yes
-  become: yes
 
-- name: Install shutther
+- name: Install shutter
+  become: yes
   apt:
     name: shutter
     state: latest
-  become: yes

@@ -1,8 +1,10 @@
 {
     "search.exclude": {
-        ".history": true
+        ".history": true,
+        "**/*.retry": true
     },
     "files.exclude": {
-        ".history": true
+        ".history": true,
+        "**/*.retry": true
     }
 }
