@@ -5,7 +5,7 @@ services:
   - docker
 
 script:
-  - bash test/test.sh
+  - bash test.sh
 
 notifications:
   email: false
