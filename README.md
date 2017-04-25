@@ -1,4 +1,4 @@
-Ansible Docker Role 
+Ansible Shutter Role 
 ======
 
 [![Build Status](https://travis-ci.org/fabiohbarbosa/ansible-shutter-role.png)](https://travis-ci.org/fabiohbarbosa/ansible-shutter-role)
