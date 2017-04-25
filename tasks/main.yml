@@ -1,10 +1,16 @@
 ---
 - name: Add shutter PPA repository
-- apt_repository:
+  apt_repository:
     repo: ppa:shutter/ppa
+  become: yes
 
 - name: Update apt packages
-  apt: update_cache=true
+  apt:
+    update_cache: yes
+  become: yes
 
 - name: Install shutther
-  apt: name=shutter
+  apt:
+    name: shutter
+    state: latest
+  become: yes
