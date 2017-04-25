@@ -1,0 +1,12 @@
+galaxy_info:
+  author: fabiohbarbosa
+  description: Install the latest shutter Screenshot tool in Ubuntu
+  
+  license: MIT
+  
+  min_ansible_version: 1.6
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
