@@ -5,10 +5,7 @@ Ansible Docker Role
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-docker-blue.svg?style=flat-square)](https://galaxy.ansible.com/fabiohbarbosa/shutter/)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-Ansible role to shutter screenshot tool in Ubuntu
-
-> **Compatibility with new Ubuntu Zesty and Linux Mint Distributions!!!!**
-
+Ansible role to shutter screenshot tool in Ubuntu.
 
 Requirements
 ------------
