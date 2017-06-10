@@ -1,0 +1,21 @@
+FROM fabiohbarbosa/linux-mint:18.1
+
+USER root
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update -qq
+RUN apt-get install sudo git ansible -y
+
+RUN ansible --version
+
+ENV USER docker_ansible
+RUN /usr/sbin/groupadd $USER && \
+    /usr/sbin/useradd $USER -m -d /home/$USER -g $USER -s /bin/bash && \
+    echo $USER 'ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+USER docker_ansible
+
+WORKDIR /tmp/environment-setup
+
+CMD ansible-playbook -i tests/inventory tests/test.yml

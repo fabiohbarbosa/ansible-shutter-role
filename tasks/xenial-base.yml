@@ -1,0 +1,8 @@
+---
+- name: Add app key
+  apt_key:
+    url: "http://shutter-project.org/shutter-ppa.key"
+    state: present
+
+- name: Add shutter xenial PPA repository
+  shell: echo 'deb http://ppa.launchpad.net/shutter/ppa/ubuntu xenial main' >> /etc/apt/sources.list && echo 'deb-src http://ppa.launchpad.net/shutter/ppa/ubuntu xenial main' >> /etc/apt/sources.list
