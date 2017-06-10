@@ -1,28 +1,16 @@
 galaxy_info:
   author: fabiohbarbosa
   description: Install the latest shutter screenshot tool in Ubuntu
-  
+
   license: MIT
-  
-  min_ansible_version: 1.6
 
-  galaxy_tags: [ ubuntu ]
+  min_ansible_version: 2
 
-  dependencies: []
+  galaxy_tags: [ ubuntu, application ]
 
   platforms:
   - name: Ubuntu
     versions:
-      - lucid
-      - maverick
-      - natty
-      - oneiric
-      - precise
-      - quantal
-      - raring
-      - saucy
-      - trusty
-      - utopic
-      - vivid
-      - wily
       - xenial
+      - yakkety
+      - zesty

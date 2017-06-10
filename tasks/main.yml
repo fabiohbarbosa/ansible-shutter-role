@@ -1,20 +1,26 @@
 ---
-- name: Add shutter PPA repository
-  become: yes
-  apt_repository:
-    repo: ppa:shutter/ppa
-  when: ansible_distribution_release != '{{item}}'
-  with_items:
-    - 'zesty'
-    - 'yakkety'
+- debug:
+    msg:
+      - "***********************************************************************"
+      - "Running fabiohbarbosa.shutter role for {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+      - "***********************************************************************"
 
-- name: Update apt packages
-  become: yes
-  apt:
-    update_cache: yes
+- name: Checking operating system distribution compatibility
+  fail: msg="Role not compatibility for {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+  when: (ansible_distribution != "Ubuntu" and ansible_distribution != "Linuxmint")
 
-- name: Install shutter
+- name: Checking operating system release compatibility for Linux Ubuntu
+  fail: msg="Role not compatibility for {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+  when: ansible_distribution == "Ubuntu" and
+    (ansible_distribution_release != "xenial" and ansible_distribution_release != "yakkety" and ansible_distribution_release != "zesty")
+
+- name: Checking operating system release compatibility for Linux Mint
+  fail: msg="Role not compatibility for {{ ansible_distribution }} {{ ansible_distribution_version }} {{ ansible_distribution_release }}"
+  when: ansible_distribution == "Linuxmint" and
+    (ansible_distribution_release != "sarah" and ansible_distribution_release != "serena" and ansible_distribution_release != "sonya")
+
+- include: xenial-base.yml
   become: yes
-  apt:
-    name: shutter
-    state: latest
+
+- include: common.yml
+  become: yes
