@@ -1,2 +1,4 @@
 .history
 **/*.retry
+tests/**/Dockerfile
+tests/**/test-distro.sh
