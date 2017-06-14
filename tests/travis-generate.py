@@ -34,6 +34,6 @@ stream = yaml.load(open("distributions.yml", "r"))
 for distro, values in stream.items():
   create_stage(f, distro)
   for image in values:
-    add_script(f, 'docker run -it --rm '+ image)
+    add_script(f, 'docker run -it --rm -v `pwd`:/runner '+ image + ' ansible-playbook -i tests/inventory tests/test.yml')
 
 create_end_file(f)
