@@ -1,0 +1,9 @@
+mint:
+  - 'fabiohbarbosa/ansible-runner:mint-18-sarah'
+  - 'fabiohbarbosa/ansible-runner:mint-18.1-serena'
+  - 'fabiohbarbosa/ansible-runner:mint-18.2-sonya'
+
+ubuntu:
+  - 'fabiohbarbosa/ansible-runner:ubuntu-16.04-xenial'
+  - 'fabiohbarbosa/ansible-runner:ubuntu-16.10-yakkety'
+  - 'fabiohbarbosa/ansible-runner:ubuntu-17.04-zesty'
